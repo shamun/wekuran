@@ -1,0 +1,44 @@
+User-Agent: *
+Disallow: /unsubscribe/
+Disallow: /ajax?
+Disallow: /affiliate?
+Disallow: /apply-as-affiliate?
+Allow: /
+
+#
+# beware, the sections below WILL NOT INHERIT from the above!
+# http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=40360
+#
+
+#
+# disallow adsense bot, as we no longer do adsense.
+#
+User-agent: Mediapartners-Google
+Disallow: / 
+
+#
+# Yahoo Pipes is for feeds not web pages.
+#
+User-agent: Yahoo Pipes 1.0
+Disallow: /
+
+#
+# 80legs
+#
+User-agent: 008
+Disallow: /
+User-agent: voltron
+Disallow: /
+
+#
+# This isn't really an image
+#
+User-agent: Googlebot-Image
+Disallow: /*/ivc/*
+Disallow: /users/flair/
+
+#
+# this technically isn't valid, since for some godforsaken reason 
+# sitemap paths must be ABSOLUTE and not relative. 
+#
+Sitemap: /sitemap.xml

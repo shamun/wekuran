@@ -1,0 +1,81 @@
+<header>	
+
+
+  
+</header>
+
+
+
+
+<!-- COOKIES  -->
+<div id="cookiebanner" style="text-align:center; 
+     z-index: 9999;
+    position: absolute;
+    background-color: darkgray;
+    padding: 10px;
+    left: 24%;
+        border-radius: 5px;
+">
+	
+  To improve your user experience, we use cookies and Google tracking. By continuing, we assume you agree.
+  <a href="/gdpr">(Privacy Policy)  </a>
+  <a id="btn_cookie_accept" 
+     onclick="disableCookie('tpcookie','installed', 30);" 
+     title="Redisplays page without cookie banner " 
+     href="javascript:void(0)">
+    <img src="images/ok.png" 
+         style="margin-left:10px;"/>
+	</a>
+</div>
+
+</div>
+
+<!-- COOKIES  -->
+<script type="text/javascript">
+var search_text = [];
+search_text[0] = 'I am looking for......';
+search_text[1] = 'What are you looking for?';
+search_text[2] = 'Search here.....';
+search_text[3] = 'How can we help ?';
+search_text[4] = '...';  
+  
+// Set cookies  
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0){
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie(name) {
+    var usr = getCookie(name);
+    return usr;
+}
+
+var chk = checkCookie("tpcookie");
+if (chk != "") {
+    document.getElementById('cookiebanner').style.display = 'none';
+} else {
+    document.getElementById('cookiebanner').style.display = 'block';
+}
+
+function disableCookie(cname, cvalue, exdays) {
+    setCookie(cname, cvalue, exdays);
+    document.getElementById('cookiebanner').style.display = 'none';
+}
+
+</script>
+
+
+<!-- Google Analytics -->

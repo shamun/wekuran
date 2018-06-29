@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link rel="shortcut icon" href="/images/main-logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/images/main-logo.png" />
+  
+<!-- css3-mediaqueries.js for IE8 or older -->
+<!--[if lt IE 9]>
+ <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+
+<?= $this->headTitle(); ?>
+<?= $this->headMeta(); ?>
+
+<!-- NEW -->
+<?$this->headLink()->prependStylesheet('/css/responsive.min.css');?>
+<?$this->headLink()->prependStylesheet('/css/style.min.css'); ?> 
+<?$this->headLink()->prependStylesheet('/css/font-awesome.min.css'); ?> 
+<?$this->headLink()->prependStylesheet('/css/bootstrap.min.css'); ?>  
+ 
+ 
+
+
+<!-- Scripts -->
+<script  type="text/javascript">
+var balls = "<?php echo $_SERVER['REQUEST_URI'];?>";
+</script>
+<?$this->headScript()->prependFile('/js/global_tst.js') ?>
+<?$this->headScript()->prependFile('/js/jquery-3.1.0.min.js') ?>
+
+<?=$this->headLink();?>
+<?=$this->headScript();?>
+</head>
+
+<body id="top" class="home">
+
+<!-- Reporting Box - Start -->
+<div id="msg_common" style="display: none;">
+  <div id="msg_common_title"></div>
+  <div id="msg_common_desc"></div>
+</div>
+<input type="hidden" name="txturl" id="txturl" placeholder="from" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+<!-- Reporting Box - End -->
+<?=$this->layout()->content; ?> 
+
+  
+</body>
+
+</html>
